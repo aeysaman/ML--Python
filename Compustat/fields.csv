@@ -1,0 +1,9 @@
+Field,Calculations
+EV/EBITDA,avg;stdev;grth
+ROIC,avg;stdev;grth
+Operating Margins,avg;stdev;grth
+Leverage,avg;stdev;grth
+Net Income,avg;stdev;grth
+Earnings Per Share,avg;stdev;grth
+Free Cash Flow,avg;stdev;grth
+Revenue,avg;stdev;grth

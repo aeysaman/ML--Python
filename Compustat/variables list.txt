@@ -1,0 +1,185 @@
+Quarterly Data - Industrial
+New CCM
+Item Name 	Keyset 	Legacy CST Item Number 	Legacy CST Item Name 	Description
+XSGAQ 	1 	1 	iqitems 	"Selling, General and Administrative Expenses"
+SALEQ 	1 	2 	iqitems 	Sales/Turnover (Net)
+MIIQ 	1 	3 	iqitems 	Minority Interest - Income Account
+XRDQ 	1 	4 	iqitems 	Research and Development Expense
+DPQ 	1 	5 	iqitems 	Depreciation and Amortization - Total
+TXTQ 	1 	6 	iqitems 	Income Taxes - Total
+EPSFIQ 	1 	7 	iqitems 	Earnings Per Share (Diluted) / Including Extraordinary Items
+IBQ 	1 	8 	iqitems 	Income Before Extraordinary Items
+EPSFXQ 	1 	9 	iqitems 	Earnings Per Share (Diluted) / Excluding Extraordinary items
+IBADJQ 	1 	10 	iqitems 	Income Before Extraordinary Items / Adjusted for Common Stock Equivalents
+EPSPIQ 	1 	11 	iqitems 	Earnings Per Share (Basic) / Including Extraordinary Items
+PRCCM 	51 	12 	iqitems 	Price / Close / Monthly
+PRCCM 	51 	13 	iqitems 	Price / Close / Monthly
+PRCCM 	51 	14 	iqitems 	Price / Close / Monthly
+CSHPRQ 	1 	15 	iqitems 	Common Shares Used to Calculate Earnings Per Share / Basic
+DVPSXQ 	32 	16 	iqitems 	Div per Share - Exdate - Quarter
+AJEXQ 	1 	17 	iqitems 	Adjustment Factor (Company) - Cumulative by Ex-Date
+CSHTRQ 	32 	18 	iqitems 	Common Shares Traded / Quarter
+EPSPXQ 	1 	19 	iqitems 	Earnings Per Share (Basic) / Excluding Extraordinary Items
+DVRATE 	51 	20 	iqitems 	Dividend Rate / Monthly
+OIBDPQ 	1 	21 	iqitems 	Operating Income Before Depreciation - Quarterly
+XINTQ 	1 	22 	iqitems 	Interest and Related Expense- Total
+PIQ 	1 	23 	iqitems 	Pretax Income
+DVPQ 	1 	24 	iqitems 	Dividends / Preferred/Preference
+IBCOMQ 	1 	25 	iqitems 	Income Before Extraordinary Items / Available for Common
+XIDOQ 	1 	26 	iqitems 	Extraordinary Items and Discontinued Operations
+EPSPXQ 	1 	27 	iqitems 	Earnings Per Share (Basic) / Excluding Extraordinary Items
+CSH12Q 	1 	28 	iqitems 	Common Shares Used to Calculate Earnings Per Share / 12 Months Moving
+TIIQ 	1 	29 	iqitems 	Interest Income / Total (Financial Services)
+COGSQ 	1 	30 	iqitems 	Cost of Goods Sold
+NOPIQ 	1 	31 	iqitems 	Non-Operating Income (Expense) - Total
+SPIQ 	1 	32 	iqitems 	Special Items
+DOQ 	1 	33 	iqitems 	Discontinued Operations
+FCAQ 	1 	34 	iqitems 	Foreign Exchange Income (Loss)
+TXDIQ 	1 	35 	iqitems 	Income Taxes / Deferred
+CHEQ 	1 	36 	iqitems 	Cash and Short-Term Investments
+RECTQ 	1 	37 	iqitems 	Receivables - Total
+INVTQ 	1 	38 	iqitems 	Inventories - Total
+ACOQ 	1 	39 	iqitems 	Current Assets - Other - Total
+ACTQ 	1 	40 	iqitems 	Current Assets - Total
+DPACTQ 	1 	41 	iqitems 	"Depreciation, Depletion and Amortization (Accumulated)"
+PPENTQ 	1 	42 	iqitems 	Property Plant and Equipment - Total (Net)
+AOQ 	1 	43 	iqitems 	Assets - Other - Total
+ATQ 	1 	44 	iqitems 	Assets - Total
+DLCQ 	1 	45 	iqitems 	Debt in Current Liabilities
+APQ 	1 	46 	iqitems 	Account Payable/Creditors - Trade
+TXPQ 	1 	47 	iqitems 	Income Taxes Payable
+LCOQ 	1 	48 	iqitems 	Current Liabilities - Other - Total
+LCTQ 	1 	49 	iqitems 	Current Liabilities - Total
+LOQ 	1 	50 	iqitems 	Liabilities - Other
+DLTTQ 	1 	51 	iqitems 	Long-Term Debt - Total
+TXDITCQ 	1 	52 	iqitems 	Deferred Taxes and Investment Tax Credit
+MIBQ 	1 	53 	iqitems 	Minority Interest - Balance Sheet
+LTQ 	1 	54 	iqitems 	Liabilities - Total
+PSTKQ 	1 	55 	iqitems 	Preferred/Preference Stock (Capital) - Total
+CSTKQ 	1 	56 	iqitems 	Common/Ordinary Stock (Capital)
+CAPSQ 	1 	57 	iqitems 	Capital Surplus/Share Premium Reserve
+REQ 	1 	58 	iqitems 	Retained Earnings
+CEQQ 	1 	59 	iqitems 	Common/Ordinary Equity - Total
+SEQQ 	1 	60 	iqitems 	Shareholders' Equity - Total
+CSHOQ 	1 	61 	iqitems 	Common Shares Outstanding
+ICAPTQ 	1 	62 	iqitems 	Invested Capital / Total / Quarterly
+PRCHM 	51 	63 	iqitems 	Price / High / Monthly
+PRCHM 	51 	64 	iqitems 	Price / High / Monthly
+PRCHM 	51 	65 	iqitems 	Price / High / Monthly
+PRCLM 	51 	66 	iqitems 	Price / Low / Monthly
+PRCLM 	51 	67 	iqitems 	Price / Low / Monthly
+PRCLM 	51 	68 	iqitems 	Price / Low / Monthly
+NIQ 	1 	69 	iqitems 	Net Income (Loss)
+TIEQ 	1 	70 	iqitems 	Interest Expense / Total (Financial Services)
+PSTKRQ 	1 	71 	iqitems 	Preferred/Preference Stock / Redeemable
+DVPSPQ 	32 	72 	iqitems 	Dividends per Share / Pay Date / Quarter
+WCAPCY 	1 	73 	iqitems 	Working Capital Change / Other / Increase/(Decrease)
+CHECHY 	1 	74 	iqitems 	Cash and Cash Equivalents - Increase (Decrease)
+DLCCHY 	1 	75 	iqitems 	Changes in Current Debt
+IBCY 	1 	76 	iqitems 	Income Before Extraordinary Items - Statement of Cash Flows
+DPCY 	1 	77 	iqitems 	Depreciation and Amortization - Statement of Cash Flows
+XIDOCY 	1 	78 	iqitems 	Extraordinary Items and Discontinued Operations (Statement of Cash Flows)
+TXDCY 	1 	79 	iqitems 	Deferred Taxes (Statement of Cash Flows)
+ESUBCY 	1 	80 	iqitems 	Equity in Net Loss/Earnings (C/F)
+FOPOY 	1 	81 	iqitems 	Funds from Operations - Other
+FOPTY 	1 	82 	iqitems 	Funds From Operations / Total
+SPPEY 	1 	83 	iqitems 	Sale of Property
+SSTKY 	1 	84 	iqitems 	Sale of Common and Preferred Stock
+SIVY 	1 	85 	iqitems 	Sale of Investments
+DLTISY 	1 	86 	iqitems 	Long-Term Debt - Issuance
+FSRCOY 	1 	87 	iqitems 	Sources of Funds - Other
+FSRCTY 	1 	88 	iqitems 	Sources of Funds - Total
+DVY 	1 	89 	iqitems 	Cash Dividends
+CAPXY 	1 	90 	iqitems 	Capital Expenditures
+IVCHY 	1 	91 	iqitems 	Increase in Investments
+DLTRY 	1 	92 	iqitems 	Long-Term Debt - Reduction
+PRSTKCY 	1 	93 	iqitems 	Purchase of Common and Preferred Stock
+AQCY 	1 	94 	iqitems 	Acquisitions
+FUSEOY 	1 	95 	iqitems 	Uses of Funds - Other
+FUSETY 	1 	96 	iqitems 	Uses of Funds - Total
+NIITQ 	1 	97 	iqitems 	Net Interest Income (Tax Equivalent)
+TSTKQ 	1 	98 	iqitems 	Treasury Stock - Total (All Capital)
+NPATQ 	1 	99 	iqitems 	Nonperforming Assets / Total
+AJPQ 	1 	100 	iqitems 	Adjustment Factor (Company) - Cumulative byPay-Date
+WCAPCHY 	1 	101 	iqitems 	Working Capital Changes - Total
+SPPIVY 	1 	102 	iqitems 	Sale of PP&E and Investments - (Gain) Loss
+RECCHY 	1 	103 	iqitems 	Accounts Receivable - Decrease (Increase)
+INVCHY 	1 	104 	iqitems 	Inventory - Decrease (Increase)
+APALCHY 	1 	105 	iqitems 	Accounts Payable and Accrued Liabilities - Increase (Decrease)
+TXACHY 	1 	106 	iqitems 	Income Taxes - Accrued - Increase (Decrease)
+AOLOCHY 	1 	107 	iqitems 	Assets and Liabilities - Other (Net Change)
+OANCFY 	1 	108 	iqitems 	Operating Activities - Net Cash Flow
+IVSTCHY 	1 	109 	iqitems 	Short-Term Investments - Change
+IVACOY 	1 	110 	iqitems 	Investing Activities - Other
+IVNCFY 	1 	111 	iqitems 	Investing Activities - Net Cash Flow
+FIAOY 	1 	112 	iqitems 	Financing Activities - Other
+FINCFY 	1 	113 	iqitems 	Financing Activities - Net Cash Flow
+EXREY 	1 	114 	iqitems 	Exchange Rate Effect
+INTPNY 	1 	115 	iqitems 	Interest Paid - Net
+TXPDY 	1 	116 	iqitems 	Income Taxes Paid
+ACCHGQ 	1 	117 	iqitems 	Accounting Changes / Cumulative Effect
+PPEGTQ 	1 	118 	iqitems 	"Property, Plant and Equipment / Total (Gross) / Quarterly "
+XIQ 	1 	119 	iqitems 	Extraordinary Items
+CSTKEQ 	1 	120 	iqitems 	Common Stock Equivalents / Dollar Savings
+CURRTRQ 	1 	121 	iqitems 	Currency Translation Rate
+APQ 	1 	122 	iqitems 	Account Payable/Creditors - Trade
+CSHFDQ 	1 	124 	iqitems 	Com Shares for Diluted EPS
+DILADQ 	1 	125 	iqitems 	Dilution Adjustment
+DILAVQ 	1 	126 	iqitems 	Dilution Available / Excluding Extraordinary Items
+PLLQ 	1 	171 	iqitems 	Provision for Loan/Asset Losses
+RLLQ 	1 	172 	iqitems 	Reserve for Loan/Asset Losses
+NIMQ 	1 	173 	iqitems 	Net Interest Margin
+CAPR1Q 	1 	174 	iqitems 	Risk-Adjusted Capital Ratio - Tier 1
+CAPRTQ 	1 	175 	iqitems 	Risk-Adjusted Capital Ratio / Total / Quarterly
+NCOQ 	1 	176 	iqitems 	Net Charge-Offs
+OPEPSQ 	1 	177 	iqitems 	Earnings Per Share from Operations
+OEPS12 	1 	178 	iqitems 	Earnings Per Share from Operations - 12 Months Moving
+EPSFXQ 	1 	179 	iqitems 	Earnings Per Share (Diluted) / Excluding Extraordinary items
+OEPSXQ 	1 	180 	iqitems 	Earnings Per Share / Diluted / from Operations
+OEPSXQ 	1 	181 	iqitems 	Earnings Per Share / Diluted / from Operations
+IVLTQ 	1 	233 	iqitems 	Total Long-term Investments
+GDWLQ 	1 	234 	iqitems 	Goodwill (net)
+INTANOQ 	1 	235 	iqitems 	Other Intangibles
+ALTOQ 	1 	236 	iqitems 	Other Long-term Assets
+REUNAQ 	1 	237 	iqitems 	Unadjusted Retained Earnings
+ACOMINCQ 	1 	238 	iqitems 	Accumulated Other Comprehensive Income (Loss)
+DCOMQ 	1 	239 	iqitems 	Deferred Compensation
+SEQOQ 	1 	240 	iqitems 	Other Stockholders  Equity Adjustments
+AQPQ 	1 	241 	iqitems 	Acquisition/Merger Pretax
+AQAQ 	1 	242 	iqitems 	Acquisition/Merger After-Tax
+AQEPSQ 	1 	243 	iqitems 	Acquisition/Merger Basic EPS Effect
+AQDQ 	1 	244 	iqitems 	Acquisition/Merger Diluted EPS Effect
+GLPQ 	1 	245 	iqitems 	Gain/Loss Pretax
+GLAQ 	1 	246 	iqitems 	Gain/Loss After-Tax
+GLEPSQ 	1 	247 	iqitems 	Gain/Loss Basic EPS Effect
+GLDQ 	1 	248 	iqitems 	Gain/Loss Diluted EPS Effect
+GDWLIPQ 	1 	249 	iqitems 	Impairment of Goodwill Pretax
+GDWLIAQ 	1 	250 	iqitems 	Impairment of Goodwill After-tax
+GDWLIEPSQ 	1 	251 	iqitems 	Impairment of Goodwill Basic EPS Effect
+GDWLIDQ 	1 	252 	iqitems 	Impairment of Goodwill Diluted EPS Effect
+SETPQ 	1 	253 	iqitems 	Settlement (Litigation/Insurance) Pretax
+SETAQ 	1 	254 	iqitems 	Settlement (Litigation/Insurance) After-tax
+SETEPSQ 	1 	255 	iqitems 	Settlement (Litigation/Insurance) Basic EPS Effect
+SETDQ 	1 	256 	iqitems 	Settlement (Litigation/Insurance) Diluted EPS Effect
+RCPQ 	1 	257 	iqitems 	Restructuring Cost Pretax
+RCAQ 	1 	258 	iqitems 	Restructuring Cost After-tax
+RCEPSQ 	1 	259 	iqitems 	Restructuring Cost Basic EPS Effect
+RCDQ 	1 	260 	iqitems 	Restructuring Cost Diluted EPS Effect
+WDPQ 	1 	261 	iqitems 	Writedowns Pretax
+WDAQ 	1 	262 	iqitems 	Writedowns After-tax
+WDEPSQ 	1 	263 	iqitems 	Writedowns Basic EPS Effect
+WDDQ 	1 	264 	iqitems 	Writedowns Diluted EPS Effect
+SPIOPQ 	1 	265 	iqitems 	Other Special Items Pretax
+SPIOAQ 	1 	266 	iqitems 	Other Special Items After-tax
+SPIEPSQ 	1 	267 	iqitems 	Other Special Items Basic EPS Effect
+SPIDQ 	1 	268 	iqitems 	Other Special Items Diluted EPS Effect
+DPACREQ 	1 	269 	iqitems 	Accumulated Depreciation of RE Property
+RETQ 	1 	270 	iqitems 	Total RE Property
+SRETQ 	1 	271 	iqitems 	Gain/Loss on Sale of Property
+DPRETQ 	1 	272 	iqitems 	Depr/Amort of Property
+ADRRQ 	1 	273 	iqitems 	ADR Ratio
+RDIPQ 	1 	274 	iqitems 	In Process R&D
+GDWLAMQ 	1 	275 	iqitems 	Amortization of Goodwill
+CSHIQ 	1 	277 	iqitems 	Common Shares Issued
+STKCOQ 	1 	278 	iqitems 	Stock Compensation Expense
+TXBCOFY 	1 	279 	iqitems 	Excess Tax Benefit of Stock Options - Cash Flow Financing
