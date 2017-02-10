@@ -41,7 +41,22 @@ class Node:
                 return self.left.predict(x)
         else:
             return majorityCount(self.es)
-
+    def errorRate(self):
+        if hasattr(self, "f"):
+            (Rerr, Rtot) = self.right.errorRate()
+            (Lerr, Ltot) = self.left.errorRate()
+            return (Rerr + Lerr, Rtot + Ltot)
+        else:
+            c = majorityCount(self.es)
+            error = len([e for e in self.es if e.grp !=c])
+            return (error, len(self.es))
+    def getErrors(self):
+        if hasattr(self, "f"):
+            return self.right.getErrors() + self.left.getErrors()
+        else:
+            c = majorityCount(self.es)
+            return [e for e in self.es if e.grp !=c]
+        
 def newNode(es, tree):
     node = Node(es, tree)
     return (node, node.bestSplit())
@@ -64,10 +79,14 @@ class Tree:
         self.top.printTree(0)
     def predict(self, x):
         return self.top.predict(x)
+    def errorRate(self):
+        (error, total) = self.top.errorRate()
+        return float(error) / total
+    def getErrors(self):
+        return self.top.getErrors()
 
 def majorityCount(es):
-    count = Counter([e.grp for e in es])
-    return count.most_common(1)[0][0]
+    return Counter([e.grp for e in es]).most_common(1)[0][0]
             
 def genSplits(es, f, n):
     ls = sorted([e.data[f] for e in es])
@@ -78,8 +97,7 @@ def infoGain(es, f, amt):
     (oScr, oCnt) = entropy(es)
     (lScr, lCnt) = entropy([e for e in es if e.data[f]<amt])
     (hScr, hCnt) = entropy([e  for e in es if e.data[f]>=amt])
-    IG = oScr - (lScr * lCnt + hScr * hCnt) / oCnt
-    return IG
+    return oScr - (lScr * lCnt + hScr * hCnt) / oCnt
 
 def entropy(es):
     total = float(len(es))

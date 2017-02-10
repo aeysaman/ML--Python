@@ -5,11 +5,12 @@ price = "data14"
 div = "data16"
 adjustment = "data17"
 
-def getFwdRtns(sec, q, n):
+def getFwdRtns(sec, q, n, index):
     if ( n <=0):
         return 1
     x = sec.elements
     curr_q = q.toString()
+    curr_date = x[curr_q].date
     futr_q = q.iterate(1).toString()
     
     if ( not testRtns(x, curr_q, futr_q)):
@@ -21,9 +22,15 @@ def getFwdRtns(sec, q, n):
     curr_adj = float(x[curr_q].raw[adjustment])
     futr_adj = float(x[curr_q].raw[adjustment])
 
+    curr_index = float(index[x[curr_q].date])
+    futr_index = float(index[x[futr_q].date])
+
     rtn = (futr_price *(curr_adj / futr_adj) - curr_price + dividend) / curr_price
+    index_rtn = (futr_index - curr_index) / curr_index
+    alpha = rtn - index_rtn
+    
     #print (curr_q + ' c-p: {0}  f-p: {1}  d: {2} => rtn: {3}'.format(curr_price, futr_price, dividend, rtn))
-    return (1 + rtn) * getFwdRtns(sec, q.iterate(1), n-1)
+    return (1 + alpha) * getFwdRtns(sec, q.iterate(1), n-1, index)
 
 #simplify the below
 def testRtns(x, c_qtr, f_qtr):

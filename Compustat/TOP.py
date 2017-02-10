@@ -1,5 +1,5 @@
 import csv
-from IO import read_Data, org_Data, export, read_Fields
+from IO import read_Data, org_Data, export, read_Fields, read_Index
 from fin_stats import getY
 from access import getAllwLastNQ, query
 from return_calc import getFwdRtns
@@ -9,6 +9,7 @@ from errors import closeErrorFile
 in_file = "test_data GE.csv"
 out_file = "output.csv"
 fields_file = "fields.csv"
+index_file = "SPY historicals.csv"
 
 ns = {4, 8}
 rs = {1, 2, 4, 8}
@@ -16,6 +17,7 @@ rs = {1, 2, 4, 8}
 #read Data
 db = org_Data(read_Data(in_file))
 fields = read_Fields(fields_file)
+index = read_Index(index_file)
 
 #input ratios & fwd returns
 for name in db:
@@ -23,7 +25,7 @@ for name in db:
     for qStr in sec.elements:
         e = sec.elements[qStr]
         e.clean = {f: getY(e,f) for f in fields}
-        e.clean.update({"fwd_rtn_{}".format(r) : getFwdRtns(sec, e.quarter, r) for r in rs})
+        e.clean.update({"fwd_rtn_{}".format(r) : getFwdRtns(sec, e.quarter, r, index) for r in rs})
         
 #input calculations and move name/qrtr into clean for export
 elements = getAllwLastNQ(db, max(ns))

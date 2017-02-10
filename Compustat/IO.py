@@ -1,5 +1,6 @@
 import csv
 from objects import element,security
+import datetime
 
 #reads data dictionary from file_name into a list of qrtr objects
 def read_Data(file):
@@ -28,3 +29,6 @@ def read_Fields(file):
         return {row["Field"] : row["Calculations"].split(";") for row in csv.DictReader(f)}
 
 
+def read_Index(file):
+    with open(file) as f:
+        return {datetime.datetime.strptime(row["Date"], "%m/%d/%Y").date() : row["Close"] for row in csv.DictReader(f)}

@@ -23,6 +23,7 @@ def genTree(es, fs, k):
     tree = Tree(es, fs, k)
     tree.split()
     tree.printTree()
+    print(tree.errorRate())
     return tree
 
 def getRandSubset(fs, n):

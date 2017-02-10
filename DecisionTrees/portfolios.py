@@ -12,7 +12,7 @@ def printInfo(portfolios, classes, rtn_f):
         if(l <1):
             continue
         s = sum([float(p.data[rtn_f]) for p in portfolios[c]])
-        print("{} {} {}".format(c, l, s / l))
+        print("class:{} size:{} avg rtn:{}".format(c, l, s / l))
 
 def classifyAll(es, rf, amount):
     for e in es:
