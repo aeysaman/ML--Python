@@ -1,7 +1,7 @@
+import math
 
-
-def genPortfolios(predictions, classes):
-    return { c : buildPort(predictions, c) for c in classes}
+def formPorts(data, cs):
+    return {c : buildPort(data, c) for c in cs}
 
 def buildPort(preds, c):
     return [e for (e, v) in preds.iteritems() if v == c]
@@ -21,3 +21,41 @@ def classifyAll(es, rf, amount):
         else:
             e.classify("B")
     return ["G", "B"]
+
+def run(rf, test, pred_f, rtn_f, cs):
+    preds = {e : rf.predict(e) for e in test}
+
+    for e, c in preds.iteritems():
+        e.data[pred_f] = c
+
+    ports =  formPorts(preds, cs)
+
+    printInfo(ports, cs, rtn_f)
+
+    return preds, ports
+
+class Qrtr:
+    def __init__(self, y, q):
+        self.y = int(y)
+        self.q = int(q)
+    def iterate(self, n):
+        y = self.y + math.floor((self.q + n - 1) / 4)
+        q = (self.q + n - 1) % 4 + 1
+        return Qrtr(y, q)
+    def toString(self):
+        return str(self.y) + "-" + str(self.q)
+
+def parseQ(foo):
+    (y, q) = foo.split("-")
+    return Qrtr(y, q)
+
+def getNprev(qs, q, n):
+    if(n==0):
+        return []
+    return [x for x in qs if q.iterate(-1).toString() == x.toString()] + getNprev(qs, q.iterate(-1), n-1)
+
+def genPeriods(es, n):
+    allDates = [parseQ(x) for x in set([x.data["qrtr"] for x in es])]
+    unfiltered = {x : getNprev(allDates, x, n) for x in allDates}
+    filtered = {x : y for x,y in unfiltered.iteritems() if len(y)==n}
+    return filtered

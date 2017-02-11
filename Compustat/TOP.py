@@ -6,8 +6,8 @@ from return_calc import getFwdRtns
 from objects import element
 from errors import closeErrorFile
 
-in_file = "test_data GE.csv"
-out_file = "output.csv"
+in_file = "test_data multi.csv"
+out_file = "output multi.csv"
 fields_file = "fields.csv"
 index_file = "SPY historicals.csv"
 

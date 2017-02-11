@@ -1,4 +1,5 @@
 from objects import quarterDate
+from datetime import timedelta
 from errors import throwError
 
 price = "data14"
@@ -22,8 +23,8 @@ def getFwdRtns(sec, q, n, index):
     curr_adj = float(x[curr_q].raw[adjustment])
     futr_adj = float(x[curr_q].raw[adjustment])
 
-    curr_index = float(index[x[curr_q].date])
-    futr_index = float(index[x[futr_q].date])
+    curr_index = getIndex(index, x[curr_q].date)
+    futr_index = getIndex(index, x[futr_q].date)
 
     rtn = (futr_price *(curr_adj / futr_adj) - curr_price + dividend) / curr_price
     index_rtn = (futr_index - curr_index) / curr_index
@@ -31,6 +32,15 @@ def getFwdRtns(sec, q, n, index):
     
     #print (curr_q + ' c-p: {0}  f-p: {1}  d: {2} => rtn: {3}'.format(curr_price, futr_price, dividend, rtn))
     return (1 + alpha) * getFwdRtns(sec, q.iterate(1), n-1, index)
+
+def getIndex(index, date):
+    if date in index:
+        return float(index[date])
+    for i in range(10):
+        if date + timedelta(1) in index:
+            return float(index[date + timedelta(1)])
+        if date - timedelta(1) in index:
+            return float(index[date - timedelta(1)])
 
 #simplify the below
 def testRtns(x, c_qtr, f_qtr):

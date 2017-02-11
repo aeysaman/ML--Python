@@ -11,6 +11,7 @@ class RF:
         self.all_fs = all_fs
         self.k = k
         self.n = n
+        self.genAll()
     def genAll(self):
         self.trees = [genTree(self.es, fields, self.k) for fields in getRandSubset(self.all_fs, self.n)]
     def predict(self, x):
