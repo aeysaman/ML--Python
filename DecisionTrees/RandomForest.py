@@ -16,15 +16,14 @@ class RF:
         self.trees = [genTree(self.es, fields, self.k) for fields in getRandSubset(self.all_fs, self.n)]
     def predict(self, x):
         preds = [t.predict(x) for t in self.trees]
-        c = Counter(preds)
-        return c.most_common(1)[0][0]
+        return Counter(preds).most_common(1)[0][0]
 
 def genTree(es, fs, k):
-    print (fs)
+##    print (fs)
     tree = Tree(es, fs, k)
     tree.split()
-    tree.printTree()
-    print(tree.errorRate())
+##    tree.printTree()
+##    print(tree.errorRate())
     return tree
 
 def getRandSubset(fs, n):

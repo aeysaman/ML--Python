@@ -22,7 +22,6 @@ class Node:
     def split(self, info):
         (node, f, amt, score) = info
         (node.f, node.amt) = (f,amt)
-        
         (node.left, lowOption) = newNode([e for e in node.es if e.data[f]<amt], node.tree)
         (node.right, highOption) = newNode([e  for e in node.es if e.data[f]>=amt], node.tree)
         return [lowOption, highOption]

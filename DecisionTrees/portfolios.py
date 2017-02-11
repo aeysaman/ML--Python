@@ -1,4 +1,5 @@
 import math
+import copy
 
 def formPorts(data, cs):
     return {c : buildPort(data, c) for c in cs}
@@ -59,3 +60,14 @@ def genPeriods(es, n):
     unfiltered = {x : getNprev(allDates, x, n) for x in allDates}
     filtered = {x : y for x,y in unfiltered.iteritems() if len(y)==n}
     return filtered
+
+def splitData(pers, es):
+    data = list()
+    for x, y in pers.iteritems():
+        test = [copy.deepcopy(z) for z in es if x.toString() == z.data["qrtr"]]
+        train = [copy.deepcopy(z) for z in es for w in y if w.toString() == z.data["qrtr"]]
+        data.append((x, test, train))
+    return data
+
+
+
