@@ -30,9 +30,7 @@ def run(rf, test, pred_f, rtn_f, cs):
         e.data[pred_f] = c
 
     ports =  formPorts(preds, cs)
-
-    printInfo(ports, cs, rtn_f)
-
+##    printInfo(ports, cs, rtn_f)
     return preds, ports
 
 class Qrtr:
@@ -69,5 +67,20 @@ def splitData(pers, es):
         data.append((x, test, train))
     return data
 
+def calcRtn(vals):
+    if len(vals) ==0:
+        return None
+    else:
+        return sum([float(x.data[rtn_f]) for x in vals])/ len(vals)
 
+def printPorts(ports, cs):
+    for c in cs:    
+        avg = [ (q.toString(), calcRtn(ls[c]), len(ls[c])) for q, ls in ports.iteritems()]
+        product = reduce(lambda x, y: x*y, [x for q,x,s in avg if x != None])
+        print ("Class:{} Rtn:{}".format(c,product))
+        print(len(avg))
+        for (q, x, s) in avg:
+            print ( "Q:{} Rtn:{} Size:{}".format(q, x, s))
 
+def genGroups(es, terms):
+    return [(name, [copy.deepcopy(e) for e in es if funct(e.data)]) for name, funct in terms]
