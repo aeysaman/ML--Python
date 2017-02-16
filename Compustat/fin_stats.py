@@ -23,7 +23,7 @@ def getY(x, field):
             return FCF(x)
         if(field == "Revenue"):
             return Revenue(x)    
-    except(ZeroDivisionError) as e:
+    except(ZeroDivisionError, TypeError) as e:
         throwError(e, x.name, x.getQrtrStr(), field, "")
         return None
         
@@ -52,11 +52,11 @@ int_exp = "data22"
 
 #EBIT = revenue - COGS - SG&A - depr&amor
 def EBIT(x):
-    return x.getX(revenue) - x.getX(COGS) - x.getX(SGA) - x.getX(depr_amor)
+    return x.getX(revenue) - x.getX(COGS) - x.getXtra(SGA) - x.getX(depr_amor)
 
-#EBIT = PreTax Income + interest expenses - interest income
+#EBIT = PreTax Income + interest expenses
 def EBIT2(x):
-     return x.getX(pretax_inc) + x.getX(int_exp) #needs more here???? 
+     return x.getX(pretax_inc) + x.getX(int_exp)
     
 #tax_rate = taxes / pretax_inc
 def tax_rate(x):
@@ -64,7 +64,7 @@ def tax_rate(x):
 
 #debt = LT_debt + ST_debt
 def debt(x):
-    return x.getX(LT_debt) + x.getX(ST_debt)
+    return x.getX(LT_debt) + x.getXtra(ST_debt)
 
 #mkt_cap = price * common shares
 def mkt_cap(x):
@@ -92,7 +92,7 @@ def ROIC(x):
 
 #EV = mkt cap + pref equity + debt + minority interests - cash - investments(not found)
 def EV(x):
-    return mkt_cap(x) + x.getX(pref_eq) + debt(x) + x.getX(min_int) - x.getX(cash)
+    return mkt_cap(x) + x.getXtra(pref_eq) + debt(x) + x.getXtra(min_int) - x.getX(cash)
 
 #EV to EBITDA = EV / EBITDA    
 def EV_EBITDA(x):
@@ -108,7 +108,7 @@ def EPS(x):
 
 #Free Cash Flow = EBIT (1 - tax rate) + depreciation - amortization - change in working capital - capital expenditures
 def FCF(x):
-    return EBIT(x) * (1 - tax_rate(x)) + x.getX(depr_amor) - x.getX(change_WC) - x.getX(capex)
+    return EBIT(x) * (1 - tax_rate(x)) + x.getX(depr_amor) - x.getXtra(change_WC) - x.getX(capex)
 
 #Revenue
 def Revenue(x):

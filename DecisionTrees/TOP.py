@@ -12,30 +12,34 @@ fields = ["EV/EBITDA", "ROIC", "Operating Margins", "Revenue_stdev_8", "Earnings
 rtn_f = "fwd_rtn_1"
 
 rtn_amt = .95    #split for classification
-k = 5           #number of nodes allowed in decision treem
+k = 2           #number of nodes allowed in decision treem
 n_RF = 5        #number of Random Forests to generate
 back = 8        #number of backward periods to train on
 
 (es, all_fields) = readIn(in_file, fields)
 future = readIn("GE-test predict.csv", fields)[0]
 
-classes = classifyAll(es, rtn_f, rtn_amt)
+print("avg {}".format(sum([float(e.data[rtn_f]) for e in es]) / len(es)))
+
+##classes = classifyAll(es, rtn_f, rtn_amt)
+classes = classifyAll(es, rtn_f, [("G", lambda x: x >1.05), ("A", lambda x: x<=1.05 and x>.9), ("B", lambda x: x<=.9)])
 
 terms = list()
-terms.append(("high ROIC", lambda x : x["ROIC"] >.03))
-terms.append(("low EV/EBITDA", lambda x : x["EV/EBITDA"] <80))
+terms.append(("normal", lambda x : True))
+##terms.append(("high ROIC", lambda x : x["ROIC"] >.03))
+##terms.append(("low EV/EBITDA", lambda x : x["EV/EBITDA"] <80))
             
 for name, elements in genGroups(es, terms):
     print("{} : {} / {}".format(name, len(elements), len(es)))
-##    data = splitData(genPeriods(elements, back), elements)
-##    portfolios = dict()
-##
-##    for q, test, train in data:
-##        rf = RF(train, fields, k, n_RF)
-##        (preds, ports) = run(rf, test, pred_field, rtn_f, classes)
-##        portfolios[q] = ports
-##
-##    printPorts(portfolios, classes)
+    data = splitData(genPeriods(elements, back), elements)
+    portfolios = dict()
+
+    for q, test, train in data:
+        rf = RF(train, fields, k, n_RF)
+        (preds, ports) = run(rf, test, pred_field, rtn_f, classes)
+        portfolios[q] = ports
+
+    printPorts(portfolios, classes, rtn_f)
 
         
 ##all_fields.append(pred_field)

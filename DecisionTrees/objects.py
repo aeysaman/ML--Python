@@ -88,9 +88,12 @@ def majorityCount(es):
     return Counter([e.grp for e in es]).most_common(1)[0][0]
             
 def genSplits(es, f, n):
-    ls = sorted([e.data[f] for e in es])
-    ran = ls[len(ls) -1] - ls[0]
-    return [ls[0] + i * ran/ n for i in range (1, n)]
+    try:
+        ls = sorted([e.data[f] for e in es])
+        ran = ls[len(ls) -1] - ls[0]
+        return [ls[0] + i * ran/ n for i in range (1, n)]
+    except (IndexError) as e:
+        print(ls)
 
 def infoGain(es, f, amt):
     (oScr, oCnt) = entropy(es)

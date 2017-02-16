@@ -21,7 +21,12 @@ class element:
             return float(x)
         except (ValueError, TypeError) as e:
             throwError(e, self.name, self.getQrtrStr(), field, "")
+            return None
+    def getXtra(self,field):
+        foo = self.getX(field)
+        if(foo == None):
             return 0
+        return foo
 
 class security:
     def __init__(self, name):

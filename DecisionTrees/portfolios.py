@@ -15,16 +15,23 @@ def printInfo(portfolios, classes, rtn_f):
         s = sum([float(p.data[rtn_f]) for p in portfolios[c]])
         print("class:{} size:{} avg rtn:{}".format(c, l, s / l))
 
-def classifyAll(es, rf, amount):
+##def classifyAll(es, rf, amount):
+##    for e in es:
+##        if float(e.data[rf]) >=amount:
+##            e.classify("G")
+##        else:
+##            e.classify("B")
+##    return ["G", "B"]
+
+def classifyAll(es, f, ls):
     for e in es:
-        if float(e.data[rf]) >=amount:
-            e.classify("G")
-        else:
-            e.classify("B")
-    return ["G", "B"]
+        for name, funct in ls:
+            if funct(float(e.data[f])):
+                e.classify(name)
+    return list(set([ name for name, funct in ls]))
 
 def run(rf, test, pred_f, rtn_f, cs):
-    preds = {e : rf.predict(e) for e in test}
+    preds = {e : rf.predictWeighted(e, cs) for e in test}
 
     for e, c in preds.iteritems():
         e.data[pred_f] = c
@@ -67,16 +74,16 @@ def splitData(pers, es):
         data.append((x, test, train))
     return data
 
-def calcRtn(vals):
+def calcRtn(vals, rtn_f):
     if len(vals) ==0:
         return None
     else:
         return sum([float(x.data[rtn_f]) for x in vals])/ len(vals)
 
-def printPorts(ports, cs):
-    for c in cs:    
-        avg = [ (q.toString(), calcRtn(ls[c]), len(ls[c])) for q, ls in ports.iteritems()]
-        product = reduce(lambda x, y: x*y, [x for q,x,s in avg if x != None])
+def printPorts(ports, cs, rtn_f):
+    for c in cs:
+        avg = [ (q.toString(), calcRtn(ls[c], rtn_f), len(ls[c])) for q, ls in ports.iteritems()]
+        product = reduce(lambda x, y: x*y, [x for q,x,s in avg if x is not None])
         print ("Class:{} Rtn:{}".format(c,product))
         print(len(avg))
         for (q, x, s) in avg:
